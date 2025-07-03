@@ -54,9 +54,73 @@ export const metadata: Metadata = {
     "high school healthcare club impact analysis",
     "student leadership development healthcare sector",
     "healthcare education program ROI assessment",
+    "medical education outreach impact measurement",
+    "healthcare career exploration program statistics",
+    "student healthcare engagement success metrics",
+    "medical mentorship program effectiveness study",
+    "healthcare education diversity initiatives results",
+    "student medical research participation outcomes",
+    "healthcare workforce preparation impact data",
+    "medical career pipeline development assessment",
+    "healthcare education accessibility improvement metrics",
+    "student healthcare volunteer impact evaluation",
   ],
+  other: {
+    "article:published_time": "2025-01-01T00:00:00.000Z",
+    "article:modified_time": new Date().toISOString(),
+    "article:section": "Healthcare Education",
+    "article:tag": "healthcare education, impact report, student mentorship, medical careers",
+    "og:updated_time": new Date().toISOString(),
+  },
 }
 
 export default function ImpactReportPage() {
-  return <ImpactReportPageClient />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://impact2025.drinterested.tech/#webpage",
+            url: "https://impact2025.drinterested.tech",
+            name: "Dr. Interested 2025 Semi-Annual Impact Report",
+            description:
+              "Comprehensive impact assessment showcasing Dr. Interested's healthcare education program outcomes and student success metrics",
+            isPartOf: {
+              "@type": "WebSite",
+              "@id": "https://impact2025.drinterested.tech/#website",
+            },
+            about: {
+              "@type": "Thing",
+              name: "Healthcare Education Impact Assessment",
+            },
+            mainEntity: {
+              "@type": "Report",
+              name: "Dr. Interested 2025 Semi-Annual Impact Report",
+            },
+            breadcrumb: {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Dr. Interested",
+                  item: "https://drinterested.tech",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "2025 Impact Report",
+                  item: "https://impact2025.drinterested.tech",
+                },
+              ],
+            },
+          }),
+        }}
+      />
+      <ImpactReportPageClient />
+    </>
+  )
 }

@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "Dr. Interested 2025 Semi-Annual Impact Report | Healthcare Education Impact",
+    default: "Dr. Interested 2025 Semi-Annual Impact Report | Healthcare Education Impact Assessment",
     template: "%s | Dr. Interested Impact Report 2025",
   },
   description:
-    "Explore Dr. Interested's comprehensive 2025 Semi-Annual Impact Report showcasing our achievements in empowering 500+ high school students to pursue healthcare careers through mentorship, education, and hands-on experiences. Discover student success stories, program growth metrics, and community impact data.",
+    "Explore Dr. Interested's comprehensive 2025 Semi-Annual Impact Report showcasing measurable outcomes in healthcare education. Discover how we've empowered 500+ high school students through mentorship programs, research opportunities, and career development initiatives. View detailed metrics, student success stories, and community impact data from July-December 2024.",
   keywords: [
     "Dr. Interested impact report 2025",
     "healthcare education impact assessment",
@@ -39,6 +39,16 @@ export const metadata: Metadata = {
     "healthcare education accessibility impact",
     "diverse healthcare workforce development",
     "student healthcare research achievements",
+    "healthcare education statistics 2025",
+    "medical mentorship program ROI",
+    "student healthcare engagement metrics",
+    "healthcare career pipeline development",
+    "medical education outreach impact",
+    "healthcare diversity initiatives results",
+    "student medical research participation",
+    "healthcare education program evaluation",
+    "medical career exploration outcomes",
+    "healthcare workforce preparation impact",
   ],
   authors: [
     { name: "Dr. Interested Team", url: "https://drinterested.tech/members" },
@@ -58,7 +68,7 @@ export const metadata: Metadata = {
     siteName: "Dr. Interested Impact Report",
     images: [
       {
-        url: "https://impact2025.drinterested.tech/circle-logo.png",
+        url: "https://impact2025.drinterested.tech/impact-report-og.png",
         width: 1200,
         height: 630,
         alt: "Dr. Interested 2025 Semi-Annual Impact Report - Healthcare Education Impact",
@@ -74,7 +84,7 @@ export const metadata: Metadata = {
     ],
     article: {
       publishedTime: "2025-01-01T00:00:00.000Z",
-      modifiedTime: "2025-01-01T00:00:00.000Z",
+      modifiedTime: new Date().toISOString(),
       section: "Healthcare Education",
       tags: [
         "healthcare education",
@@ -83,6 +93,10 @@ export const metadata: Metadata = {
         "medical careers",
         "high school programs",
         "healthcare workforce development",
+        "medical education outcomes",
+        "student success metrics",
+        "healthcare diversity",
+        "career development",
       ],
       authors: ["https://drinterested.tech/members"],
     },
@@ -120,11 +134,10 @@ export const metadata: Metadata = {
   },
   icons: [
     { rel: "icon", url: "/favicon.ico", sizes: "any" },
-    { rel: "icon", url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    { rel: "icon", url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    { rel: "apple-touch-icon", url: "/apple-touch-icon.png", sizes: "180x180" },
-    { rel: "android-chrome-192x192", url: "/android-chrome-192x192.png", sizes: "192x192" },
-    { rel: "android-chrome-512x512", url: "/android-chrome-512x512.png", sizes: "512x512" },
+    { rel: "icon", url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
+    { rel: "icon", url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+    { rel: "apple-touch-icon", url: "/circle-logo.png", sizes: "180x180" },
+    { rel: "shortcut icon", url: "/favicon.ico" },
   ],
   manifest: "/site.webmanifest",
   generator: "Next.js",
@@ -139,6 +152,12 @@ export const metadata: Metadata = {
   other: {
     "msapplication-TileColor": "#405862",
     "theme-color": "#405862",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "format-detection": "telephone=no",
+    "mobile-web-app-capable": "yes",
+    "msapplication-config": "/browserconfig.xml",
+    "msapplication-TileImage": "/mstile-144x144.png",
   },
 }
 
@@ -159,11 +178,12 @@ const impactReportSchema = {
   "@type": "Report",
   "@id": "https://impact2025.drinterested.tech/#report",
   name: "Dr. Interested 2025 Semi-Annual Impact Report",
+  headline: "Dr. Interested 2025 Semi-Annual Impact Report - Healthcare Education Outcomes",
   description:
     "Comprehensive impact assessment of Dr. Interested's healthcare education programs, showcasing student outcomes, program growth, and community impact metrics for July-December 2024.",
   url: "https://impact2025.drinterested.tech",
-  datePublished: "2025-01-01",
-  dateModified: "2025-01-01",
+  datePublished: "2025-01-01T00:00:00.000Z",
+  dateModified: new Date().toISOString(),
   inLanguage: "en-US",
   author: {
     "@type": "Organization",
@@ -187,18 +207,40 @@ const impactReportSchema = {
       height: 800,
     },
   },
-  about: {
-    "@type": "Thing",
-    name: "Healthcare Education Impact",
-    description: "Assessment of educational programs designed to prepare high school students for healthcare careers",
-  },
-  keywords: "healthcare education, student mentorship, medical careers, impact assessment, educational outcomes",
+  about: [
+    {
+      "@type": "Thing",
+      name: "Healthcare Education Impact",
+      description: "Assessment of educational programs designed to prepare high school students for healthcare careers",
+    },
+    {
+      "@type": "Thing",
+      name: "Student Mentorship Programs",
+      description: "Evaluation of mentorship initiatives connecting students with healthcare professionals",
+    },
+    {
+      "@type": "Thing",
+      name: "Medical Career Development",
+      description: "Analysis of career preparation and guidance programs for aspiring healthcare professionals",
+    },
+  ],
+  keywords:
+    "healthcare education, student mentorship, medical careers, impact assessment, educational outcomes, healthcare workforce development, student success metrics",
   mainEntity: {
     "@type": "EducationalOrganization",
     name: "Dr. Interested",
     description:
       "Student-led organization empowering high school students to explore healthcare careers through education, mentorship, and hands-on experiences",
     url: "https://drinterested.tech",
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Dr. Interested",
+    url: "https://drinterested.tech",
+  },
+  potentialAction: {
+    "@type": "ReadAction",
+    target: "https://impact2025.drinterested.tech",
   },
 }
 
@@ -239,21 +281,84 @@ const organizationSchema = {
     audienceType: "high school students interested in healthcare careers",
   },
   educationalCredentialAwarded: "Volunteer Hours Certificate",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Healthcare Education Programs",
-    itemListElement: [
-      {
-        "@type": "Course",
-        name: "Healthcare Career Exploration",
-        description: "Comprehensive program introducing students to various healthcare career paths",
+  offers: [
+    {
+      "@type": "Course",
+      name: "Healthcare Career Exploration",
+      description: "Comprehensive program introducing students to various healthcare career paths",
+      provider: {
+        "@type": "Organization",
+        "@id": "https://drinterested.tech/#organization",
       },
-      {
-        "@type": "Course",
-        name: "Medical Research Mentorship",
-        description: "Hands-on research experience with healthcare professionals",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        validFrom: "2024-01-01",
       },
-    ],
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "online",
+        courseSchedule: {
+          "@type": "Schedule",
+          duration: "P6M",
+          repeatFrequency: "P1Y",
+        },
+        instructor: {
+          "@type": "Organization",
+          "@id": "https://drinterested.tech/#organization",
+        },
+      },
+      coursePrerequisites: "High school enrollment",
+      educationalLevel: "High School",
+      teaches: ["Healthcare career exploration", "Medical field overview", "Career pathway planning"],
+    },
+    {
+      "@type": "Course",
+      name: "Medical Research Mentorship",
+      description: "Hands-on research experience with healthcare professionals",
+      provider: {
+        "@type": "Organization",
+        "@id": "https://drinterested.tech/#organization",
+      },
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        validFrom: "2024-01-01",
+      },
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "blended",
+        courseSchedule: {
+          "@type": "Schedule",
+          duration: "P3M",
+          repeatFrequency: "P6M",
+        },
+        instructor: {
+          "@type": "Person",
+          name: "Healthcare Professional Mentors",
+          jobTitle: "Medical Professionals",
+        },
+      },
+      coursePrerequisites: "Completion of Healthcare Career Exploration",
+      educationalLevel: "High School",
+      teaches: ["Research methodology", "Data analysis", "Scientific writing", "Healthcare research ethics"],
+    },
+  ],
+  knowsAbout: [
+    "Healthcare Education",
+    "Medical Career Development",
+    "Student Mentorship",
+    "Healthcare Workforce Development",
+    "Medical Research Training",
+    "Healthcare Volunteer Programs",
+  ],
+  memberOf: {
+    "@type": "Organization",
+    name: "Healthcare Education Community",
   },
 }
 
@@ -282,6 +387,69 @@ const breadcrumbSchema = {
   ],
 }
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://impact2025.drinterested.tech/#website",
+  url: "https://impact2025.drinterested.tech",
+  name: "Dr. Interested 2025 Impact Report",
+  description:
+    "Comprehensive impact assessment showcasing Dr. Interested's healthcare education program outcomes and student success metrics",
+  publisher: {
+    "@type": "Organization",
+    name: "Dr. Interested",
+    url: "https://drinterested.tech",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://impact2025.drinterested.tech/?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+  mainEntity: {
+    "@type": "Report",
+    name: "Dr. Interested 2025 Semi-Annual Impact Report",
+  },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Dr. Interested's 2025 Semi-Annual Impact Report?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Dr. Interested's 2025 Semi-Annual Impact Report is a comprehensive assessment of our healthcare education programs' effectiveness from July-December 2024, showcasing student outcomes, program growth metrics, and community impact data.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How many students has Dr. Interested impacted?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Dr. Interested has empowered over 500 high school students to explore healthcare careers through our mentorship programs, educational initiatives, and hands-on experiences.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What programs does Dr. Interested offer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Dr. Interested offers healthcare career exploration programs, medical research mentorship, volunteer opportunities, internship programs, and educational workshops designed to prepare high school students for healthcare careers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can students get involved with Dr. Interested?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Students can join Dr. Interested by visiting our main website at drinterested.tech, joining our Discord community, or contacting us at admin@drinterested.tech to learn about current opportunities and programs.",
+      },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -290,6 +458,47 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Enhanced Meta Tags for SEO */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="rating" content="general" />
+        <meta name="distribution" content="global" />
+        <meta name="language" content="English" />
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
+        <meta name="author" content="Dr. Interested Team" />
+        <meta name="copyright" content="Dr. Interested 2025" />
+        <meta
+          name="abstract"
+          content="Dr. Interested's comprehensive 2025 Semi-Annual Impact Report showcasing healthcare education program outcomes and student success metrics."
+        />
+        <meta name="topic" content="Healthcare Education Impact Assessment" />
+        <meta
+          name="summary"
+          content="Detailed analysis of Dr. Interested's impact on 500+ high school students pursuing healthcare careers through mentorship and education programs."
+        />
+        <meta name="Classification" content="Healthcare Education Report" />
+        <meta name="designer" content="Dr. Interested Team" />
+        <meta name="reply-to" content="admin@drinterested.tech" />
+        <meta name="owner" content="Dr. Interested" />
+        <meta name="url" content="https://impact2025.drinterested.tech" />
+        <meta name="identifier-URL" content="https://impact2025.drinterested.tech" />
+        <meta name="directory" content="submission" />
+        <meta name="pagename" content="Dr. Interested 2025 Impact Report" />
+        <meta name="category" content="Healthcare Education" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="distribution" content="Global" />
+        <meta name="rating" content="General" />
+        <meta name="revisit-after" content="7 Days" />
+        <meta name="subtitle" content="Empowering High School Students in Healthcare Careers" />
+        <meta name="target" content="High school students, educators, healthcare professionals, parents" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="apple-mobile-web-app-title" content="Dr. Interested Impact" />
+        <meta name="application-name" content="Dr. Interested Impact Report" />
+
         {/* Google tag (gtag.js) */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-6MYCRFPPGE" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -301,12 +510,33 @@ export default function RootLayout({
               page_title: 'Dr. Interested 2025 Impact Report',
               page_location: 'https://impact2025.drinterested.tech',
               content_group1: 'Impact Report',
-              content_group2: '2025 Semi-Annual'
+              content_group2: '2025 Semi-Annual',
+              custom_map: {
+                'custom_parameter_1': 'healthcare_education',
+                'custom_parameter_2': 'student_mentorship'
+              }
+            });
+            
+            // Enhanced ecommerce tracking for engagement
+            gtag('event', 'page_view', {
+              page_title: 'Dr. Interested 2025 Impact Report',
+              page_location: 'https://impact2025.drinterested.tech',
+              content_group1: 'Impact Report',
+              content_group2: 'Healthcare Education'
             });
           `}
         </Script>
 
-        {/* Structured Data */}
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="your-google-search-console-verification-code" />
+
+        {/* Bing Webmaster Tools */}
+        <meta name="msvalidate.01" content="your-bing-verification-code" />
+
+        {/* Yandex Verification */}
+        <meta name="yandex-verification" content="your-yandex-verification-code" />
+
+        {/* Enhanced Structured Data */}
         <Script id="impact-report-schema" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(impactReportSchema)}
         </Script>
@@ -316,27 +546,63 @@ export default function RootLayout({
         <Script id="breadcrumb-schema" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(breadcrumbSchema)}
         </Script>
+        <Script id="website-schema" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(websiteSchema)}
+        </Script>
+        <Script id="faq-schema" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(faqSchema)}
+        </Script>
 
-        {/* Preconnect to external domains */}
+        {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://www.canva.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
 
-        {/* DNS prefetch for performance */}
+        {/* DNS prefetch for performance optimization */}
         <link rel="dns-prefetch" href="https://drinterested.tech" />
         <link rel="dns-prefetch" href="https://discord.gg" />
         <link rel="dns-prefetch" href="https://www.instagram.com" />
         <link rel="dns-prefetch" href="https://www.linkedin.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://www.bing.com" />
+        <link rel="dns-prefetch" href="https://search.yahoo.com" />
+
+        {/* Canonical and alternate links */}
+        <link rel="canonical" href="https://impact2025.drinterested.tech" />
+        <link rel="alternate" hrefLang="en-US" href="https://impact2025.drinterested.tech" />
+        <link rel="alternate" hrefLang="x-default" href="https://impact2025.drinterested.tech" />
+
+        {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* RSS Feed */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Dr. Interested Updates"
+          href="https://drinterested.tech/rss.xml"
+        />
+
+        {/* Sitemap reference */}
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <SeoSchema schema={impactReportSchema} />
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main className="flex-1" role="main">
+            <main className="flex-1" role="main" itemScope itemType="https://schema.org/Report">
+              <meta itemProp="name" content="Dr. Interested 2025 Semi-Annual Impact Report" />
+              <meta
+                itemProp="description"
+                content="Comprehensive impact assessment of Dr. Interested's healthcare education programs"
+              />
+              <meta itemProp="url" content="https://impact2025.drinterested.tech" />
               {children}
             </main>
             <Footer />
