@@ -68,17 +68,17 @@ export const metadata: Metadata = {
     siteName: "Dr. Interested Impact Report",
     images: [
       {
-        url: "https://impact2025.drinterested.tech/impact-report-og.png",
+        url: "https://impact2025.drinterested.tech/impact-report-preview.png",
         width: 1200,
-        height: 630,
-        alt: "Dr. Interested 2025 Semi-Annual Impact Report - Healthcare Education Impact",
+        height: 1200,
+        alt: "Dr. Interested 2025 Semi-Annual Impact Report - First Half of 2025 - Healthcare Education Impact Assessment with Table of Contents",
         type: "image/png",
       },
       {
-        url: "https://impact2025.drinterested.tech/logo.png",
+        url: "https://impact2025.drinterested.tech/impact-report-preview.png",
         width: 800,
         height: 800,
-        alt: "Dr. Interested Logo",
+        alt: "Dr. Interested Impact Report Cover",
         type: "image/png",
       },
     ],
@@ -110,8 +110,10 @@ export const metadata: Metadata = {
       "📊 Our 2025 Semi-Annual Impact Report is here! Discover how we've empowered 500+ students to explore healthcare careers. #HealthcareEducation #StudentMentorship #MedicalCareers",
     images: [
       {
-        url: "https://impact2025.drinterested.tech/impact-report-twitter.png",
-        alt: "Dr. Interested 2025 Semi-Annual Impact Report",
+        url: "https://impact2025.drinterested.tech/impact-report-preview.png",
+        alt: "Dr. Interested 2025 Semi-Annual Impact Report - First Half of 2025",
+        width: 1200,
+        height: 1200,
       },
     ],
   },
@@ -136,7 +138,7 @@ export const metadata: Metadata = {
     { rel: "icon", url: "/favicon.ico", sizes: "any" },
     { rel: "icon", url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
     { rel: "icon", url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
-    { rel: "apple-touch-icon", url: "/circle-logo.png", sizes: "180x180" },
+    { rel: "apple-touch-icon", url: "/impact-report-preview.png", sizes: "180x180" },
     { rel: "shortcut icon", url: "/favicon.ico" },
   ],
   manifest: "/site.webmanifest",
@@ -157,7 +159,7 @@ export const metadata: Metadata = {
     "format-detection": "telephone=no",
     "mobile-web-app-capable": "yes",
     "msapplication-config": "/browserconfig.xml",
-    "msapplication-TileImage": "/mstile-144x144.png",
+    "msapplication-TileImage": "/impact-report-preview.png",
   },
 }
 
@@ -185,6 +187,13 @@ const impactReportSchema = {
   datePublished: "2025-01-01T00:00:00.000Z",
   dateModified: new Date().toISOString(),
   inLanguage: "en-US",
+  image: {
+    "@type": "ImageObject",
+    url: "https://impact2025.drinterested.tech/impact-report-preview.png",
+    width: 1200,
+    height: 1200,
+    caption: "Dr. Interested 2025 Semi-Annual Impact Report Cover",
+  },
   author: {
     "@type": "Organization",
     name: "Dr. Interested",
@@ -202,9 +211,9 @@ const impactReportSchema = {
     url: "https://drinterested.tech",
     logo: {
       "@type": "ImageObject",
-      url: "https://drinterested.tech/logo.png",
-      width: 800,
-      height: 800,
+      url: "https://impact2025.drinterested.tech/logo.png",
+      width: 1200,
+      height: 1200,
     },
   },
   about: [
@@ -251,8 +260,8 @@ const organizationSchema = {
   name: "Dr. Interested",
   alternateName: ["Dr Interested", "Doctor Interested"],
   url: "https://drinterested.tech",
-  logo: "https://drinterested.tech/logo.png",
-  image: "https://drinterested.tech/logo.png",
+  logo: "https://impact2025.drinterested.tech/logo.png",
+  image: "https://impact2025.drinterested.tech/impact-report-preview.png",
   description:
     "Dr. Interested is a student-led organization dedicated to empowering high school students to explore careers in healthcare through comprehensive education, mentorship programs, and hands-on experiences.",
   foundingDate: "2020",
@@ -577,7 +586,7 @@ export default function RootLayout({
         {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/impact-report-preview.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* RSS Feed */}
@@ -603,6 +612,7 @@ export default function RootLayout({
                 content="Comprehensive impact assessment of Dr. Interested's healthcare education programs"
               />
               <meta itemProp="url" content="https://impact2025.drinterested.tech" />
+              <meta itemProp="image" content="https://impact2025.drinterested.tech/impact-report-preview.png" />
               {children}
             </main>
             <Footer />
